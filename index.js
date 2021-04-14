@@ -21,7 +21,7 @@ const handleFileChange = e => {
     ctx.clearRect(0, 0, W, H);
     const img = new Image();
     img.addEventListener("load", () => {
-        ctx.drawImage(img, 5, 5, 240 * 2, 135 * 2);
+        ctx.drawImage(img, 10, 10, 240 * 2, 135 * 2);
         drawMockup();
     });
     img.src = URL.createObjectURL(files[0]);
