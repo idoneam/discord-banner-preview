@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Discord Banner Preview</title>
+    <script type="text/javascript" src="./index.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        canvas#c {
+            cursor: pointer;
+
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            margin-top: -125px;
+            margin-left: -170px;
+        }
+    </style>
+</head>
+<body>
+<div style="display: none;" aria-hidden="true">
+    <img src="./mockup.png" alt="Discord Banner Mockup Template" id="img-mockup" />
+</div>
+<input type="file" name="banner" id="input-banner" accept="image/*" style="display: none;" />
+<canvas id="c" width="341" height="250"></canvas>
+</body>
+</html>
