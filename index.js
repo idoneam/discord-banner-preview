@@ -1,12 +1,13 @@
 let ctx;
 let mockup;
 
-const W = 341;
-const H = 250;
+const W = 642;
+const H = 500;
 
 const drawMockup = () => {
     ctx.drawImage(
         mockup,
+        0, 0, 341, 250,
         0, 0, W, H);
 };
 
@@ -20,7 +21,7 @@ const handleFileChange = e => {
     ctx.clearRect(0, 0, W, H);
     const img = new Image();
     img.addEventListener("load", () => {
-        ctx.drawImage(img, 5, 5, 240, 135);
+        ctx.drawImage(img, 5, 5, 240 * 2, 135 * 2);
         drawMockup();
     });
     img.src = URL.createObjectURL(files[0]);
@@ -34,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mockup.addEventListener("load", drawMockup);
 
     const inputBanner = document.getElementById("input-banner");
-
-    canvas.addEventListener("click", () => inputBanner.click());
-
     inputBanner.addEventListener("change", handleFileChange, false);
+    canvas.addEventListener("click", () => inputBanner.click());
 });
